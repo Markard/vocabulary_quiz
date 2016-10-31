@@ -1,0 +1,12 @@
+{
+  "name": "vocabulary_quiz",
+  "version": "1.0.0",
+  "authors": [
+    "Dmitry Yuzhakov <dmtry88@gmail.com>"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "http-server": "^0.9.0"
+  }
+}

@@ -1,0 +1,29 @@
+Vocabulary\QuizBundle\Entity\EnglishWord:
+    type: entity
+    oneToOne:
+        russianWord:
+            eager: true
+            targetEntity: Vocabulary\QuizBundle\Entity\RussianWord
+            joinColumn:
+                name: translation_id
+                referencedColumnName: id
+    table: english_words
+    repositoryClass: Vocabulary\QuizBundle\Repository\EnglishWordRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        word:
+            type: string
+            length: 255
+        translationId:
+            type: integer
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+    lifecycleCallbacks:
+        prePersist: [updateTimestamps]

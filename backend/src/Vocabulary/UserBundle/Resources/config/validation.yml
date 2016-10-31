@@ -1,0 +1,8 @@
+---
+Vocabulary\UserBundle\Entity\User:
+    properties:
+        username:
+            - NotBlank: ~
+            - Length:
+                min: 1
+                max: 50

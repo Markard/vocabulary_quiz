@@ -1,0 +1,20 @@
+{
+  "name": "vocabulary_quiz",
+  "version": "1.0.0",
+  "authors": [
+    "Dmitry Yuzhakov <dmtry88@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "AngularJS": "angular-latest#^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-ui-router": "ui-router#^0.3.1",
+    "angular-jwt": "^0.1.7",
+    "a0-angular-storage": "^0.0.15"
+  }
+}

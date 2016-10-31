@@ -1,0 +1,33 @@
+Vocabulary\QuizBundle\Entity\WrongAnswer:
+    type: entity
+    table: wrong_answers
+    repositoryClass: Vocabulary\QuizBundle\Repository\WrongAnswerRepository
+    manyToOne:
+        question:
+            targetEntity: Vocabulary\QuizBundle\Entity\QuizQuestion
+            inversedBy: wrongAnswers
+            joinColumn:
+                name: question_id
+                referencedColumnName: id
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        questionId:
+            type: integer
+            column: question_id
+        englishWordId:
+            type: integer
+            column: english_word_id
+        russianWordId:
+            type: integer
+            column: russian_word_id
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+    lifecycleCallbacks:
+        prePersist: [updateTimestamps]

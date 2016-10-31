@@ -1,0 +1,13 @@
+---
+parameters:
+    vocabulary.quiz.create.type.class: Vocabulary\QuizBundle\Type\CreateQuizType
+    vocabulary.quiz.answer.type.class: Vocabulary\QuizBundle\Type\AnswerQuizType
+    vocabulary.quiz.handle.class: Vocabulary\QuizBundle\Handler\QuizHandler
+
+services:
+    vocabulary.quiz.handler:
+        class: "%vocabulary.quiz.handle.class%"
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@service_container"
+            - "@security.token_storage"

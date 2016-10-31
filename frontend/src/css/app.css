@@ -1,0 +1,10 @@
+.pointer {
+    cursor: pointer;
+}
+
+.pointer:hover {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: #fff;
+    z-index: 2;
+}

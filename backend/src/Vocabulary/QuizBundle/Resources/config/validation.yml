@@ -1,0 +1,13 @@
+---
+Vocabulary\QuizBundle\Entity\Quiz:
+    properties:
+        type:
+            - NotBlank: ~
+            - Choice:
+                choices: [en, ru]
+Vocabulary\QuizBundle\Entity\AnswerQuiz:
+    properties:
+        answer_id:
+            - NotBlank: ~
+            - Type:
+                type: integer

@@ -1,0 +1,45 @@
+Vocabulary\QuizBundle\Entity\QuizQuestion:
+    type: entity
+    table: quiz_questions
+    repositoryClass: Vocabulary\QuizBundle\Repository\QuizQuestionRepository
+    manyToOne:
+        quiz:
+            targetEntity: Vocabulary\QuizBundle\Entity\Quiz
+            inversedBy: questions
+            joinColumn:
+                name: quiz_id
+                referencedColumnName: id
+    oneToMany:
+        wrongAnswers:
+            targetEntity: Vocabulary\QuizBundle\Entity\WrongAnswer
+            mappedBy: question
+            cascade:
+                - persist
+                - remove
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        quizId:
+            type: integer
+            column: quiz_id
+        isAnswered:
+            type: boolean
+            column: is_answered
+        type:
+            type: string
+            length: 255
+        questionWordId:
+            type: integer
+            column: question_word_id
+        updatedAt:
+            type: datetime
+            column: updated_at
+        createdAt:
+            type: datetime
+            column: created_at
+    lifecycleCallbacks:
+        prePersist: [updateTimestamps]

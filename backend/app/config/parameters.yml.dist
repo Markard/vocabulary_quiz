@@ -1,0 +1,17 @@
+parameters:
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: symfony
+    database_user: root
+    database_password: null
+
+    jwt_private_key_path: %kernel.root_dir%/config/keys/private.pem   # ssh private key path
+    jwt_public_key_path:  %kernel.root_dir%/config/keys/public.pem    # ssh public key path
+    jwt_key_pass_phrase:  vocabulary                                  # ssh key pass phrase
+    jwt_token_ttl:        86400
+
+    max_quiz_questions_number: 5
+    max_quiz_fails_number: 3
+    max_question_possible_answers: 5

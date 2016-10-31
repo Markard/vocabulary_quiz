@@ -1,0 +1,18 @@
+security:
+    providers:
+        db_provider:
+            entity:
+                class: VocabularyUserBundle:User
+    firewalls:
+        api_registration:
+            pattern: ^/api/user/registration$
+            methods: [POST,OPTIONS]
+            security: false
+        api:
+            pattern:   ^/api
+            stateless: true
+            lexik_jwt:
+                throw_exceptions: true
+        api_documentation:
+            pattern: ^/$
+            security: false

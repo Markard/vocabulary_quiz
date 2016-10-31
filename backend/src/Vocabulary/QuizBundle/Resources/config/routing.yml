@@ -1,0 +1,31 @@
+---
+vocabulary_quiz_get_:
+    path:     /quiz/{id}
+    defaults: { _controller: VocabularyQuizBundle:Quiz:getQuiz }
+    methods: [GET]
+    requirements:
+        id: \d+
+        _format:  json
+
+vocabulary_quiz_create_new:
+    path:     /quiz
+    defaults: { _controller: VocabularyQuizBundle:Quiz:postQuiz }
+    methods: [POST]
+    requirements:
+        _format:  json
+
+vocabulary_quiz_question_answer:
+    path:     /quiz/{quizId}/answer
+    defaults: { _controller: VocabularyQuizBundle:Question:postAnswer }
+    methods: [POST]
+    requirements:
+        id: \d+
+        _format:  json
+
+vocabulary_quiz_question_current:
+    path:     /quiz/{quizId}/current-question
+    defaults: { _controller: VocabularyQuizBundle:Question:getCurrentQuestion }
+    methods: [GET]
+    requirements:
+        id: \d+
+        _format:  json

@@ -1,0 +1,16 @@
+---
+Vocabulary\UserBundle\Entity\User:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+            groups: [registration]
+        username:
+            expose: true
+            type: string
+            groups: [registration]
+    virtual_properties:
+        getToken:
+            serialized_name: token
+            type: string
+            groups: [registration]

@@ -1,0 +1,19 @@
+---
+parameters:
+    vocabulary.registration.handler.class: Vocabulary\UserBundle\Handler\RegistrationHandler
+    vocabulary.registration.type.class: Vocabulary\UserBundle\Type\RegistrationType
+    vocabulary.jwt.handler.class: Vocabulary\UserBundle\Handler\JwtHandler
+
+services:
+    vocabulary.registration.handler:
+        class: "%vocabulary.registration.handler.class%"
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@service_container"
+
+    vocabulary.jwt.handler:
+            class: "%vocabulary.jwt.handler.class%"
+            arguments:
+                - "@cache.app"
+                - "@lexik_jwt_authentication.jwt_manager"
+                - "%lexik_jwt_authentication.token_ttl%"

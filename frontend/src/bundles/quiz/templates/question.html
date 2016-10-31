@@ -1,0 +1,16 @@
+<div class="col-lg-4 col-lg-offset-4 col-xs-12">
+
+    <div>
+        Переведите слово: <strong>{{question}}</strong>
+    </div>
+
+    <div class="list-group">
+        <li class="list-group-item pointer"
+            ng-repeat="possibleAnswer in possibleAnswers"
+            ng-click="answer(possibleAnswer.id)">
+            {{possibleAnswer.word}}
+        </li>
+    </div>
+
+    <div class="alert alert-danger" role="alert" ng-if="renderIncorrectAnswer">Не правильно</div>
+</div>

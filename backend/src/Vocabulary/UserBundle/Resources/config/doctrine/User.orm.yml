@@ -1,0 +1,25 @@
+---
+Vocabulary\UserBundle\Entity\User:
+    type: entity
+    table: users
+    repositoryClass: Vocabulary\UserBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: 50
+            unique: true
+            nullable: false
+        createdAt:
+            type: datetimetz
+            column: created_at
+        updatedAt:
+            type: datetimetz
+            column: updated_at
+    lifecycleCallbacks:
+        prePersist: [updateTimestamps]

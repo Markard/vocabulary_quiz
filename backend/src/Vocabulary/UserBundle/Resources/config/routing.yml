@@ -1,0 +1,7 @@
+---
+vocabulary_user_registration:
+    path:     /registration
+    methods: [POST]
+    defaults: { _controller: VocabularyUserBundle:Default:registration, _format: json }
+    requirements:
+      _format:  json

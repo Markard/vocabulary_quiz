@@ -1,0 +1,5 @@
+---
+vocabulary_core_cors:
+    path:     /
+    methods: [OPTIONS]
+    defaults: { _controller: VocabularyCoreBundle:Cors:options }

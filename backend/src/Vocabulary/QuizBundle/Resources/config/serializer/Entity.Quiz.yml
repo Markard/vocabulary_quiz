@@ -1,0 +1,28 @@
+---
+Vocabulary\QuizBundle\Entity\Quiz:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+            groups: [create]
+        score:
+            expose: true
+            type: integer
+            groups: [get]
+    virtual_properties:
+        getIsFinished:
+            serialized_name: is_finished
+            type: boolean
+            groups: [get,answer]
+        getIsAnswerRight:
+            serialized_name: is_answer_right
+            type: boolean
+            groups: [answer]
+        getCurrentQuestion:
+            serialized_name: question
+            type: array<integer, string>
+            groups: [get_question]
+        getPossibleAnswers:
+            serialized_name: possible_answers
+            type: array<array<integer, string>>
+            groups: [get_question]

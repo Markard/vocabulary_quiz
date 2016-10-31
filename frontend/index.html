@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Vocabulary Quiz!</title>
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="src/css/app.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Main title -->
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <h3>Vocabulary Quiz</h3>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div ui-view="content"></div>
+        </div>
+
+        <!-- Vendor scripts -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+        <script src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+
+        <!-- Common scripts -->
+        <script src="src/app.constants.js"></script>
+        <script src="src/shared/services.js"></script>
+        <script src="src/shared/filters.js"></script>
+
+        <!-- Services -->
+        <script src="src/bundles/user/service.js"></script>
+        <script src="src/bundles/quiz/service.js"></script>
+
+        <!-- Controllers -->
+        <script src="src/bundles/user/controller.js"></script>
+        <script src="src/bundles/quiz/controller.js"></script>
+
+        <!-- Routes -->
+        <script src="src/app.routes.js"></script>
+        <script src="src/bundles/user/routes.js"></script>
+        <script src="src/bundles/quiz/routes.js"></script>
+
+        <!-- Base -->
+        <script src="src/app.config.js"></script>
+        <script src="src/app.module.js"></script>
+    </body>
+</html>

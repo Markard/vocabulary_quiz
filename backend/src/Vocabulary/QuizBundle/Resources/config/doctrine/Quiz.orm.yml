@@ -1,0 +1,36 @@
+Vocabulary\QuizBundle\Entity\Quiz:
+    type: entity
+    table: quizzes
+    repositoryClass: Vocabulary\QuizBundle\Repository\QuizRepository
+    oneToMany:
+        questions:
+            targetEntity: Vocabulary\QuizBundle\Entity\QuizQuestion
+            mappedBy: quiz
+            cascade:
+                - persist
+                - remove
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        userId:
+            type: integer
+        score:
+            type: integer
+        currentFailsNumber:
+            type: integer
+        failsNumber:
+            type: integer
+        currentQuestionNumber:
+            type: integer
+        questionsNumber:
+            type: integer
+        createdAt:
+            type: datetime
+        updatedAt:
+            type: datetime
+    lifecycleCallbacks:
+        prePersist: [updateTimestamps]
