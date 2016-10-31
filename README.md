@@ -40,7 +40,7 @@ node frontend/node_modules/http-server/bin/http-server frontend -p8002
 
 ### Пояснения:
 * [Документация по API](http://127.0.0.1:8001)
-* [Запуск приложения](http://127.0.0.1:8002)
+* [Запуск приложения](http://127.0.0.1:8002/#/)
 
 
 
